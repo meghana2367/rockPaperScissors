@@ -15,13 +15,15 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let userChoice = prompt("Choose 1 - Rock, 2 - Paper, or 3 - Scissors");
-    while (userChoice != ROCK || userChoice != PAPER || userChoice != SCISSORS) {
+    let userChoice = prompt("Choose Rock, Paper, or Scissors");
+    console.log(userChoice);
+    while (userChoice != "Rock" && userChoice != "rock" && userChoice != "Paper" && userChoice != "paper" &&
+        userChoice != "Scissors" && userChoice != "scissors" ) {
         userChoice = prompt("That was not a valid choice. Choose 1 - Rock, 2 - Paper, or 3 - Scissors");
     }
-    if (userChoice == ROCK) {
+    if (userChoice == "rock" || userChoice == "Rock") {
         console.log("The User Chose Rock");
-    } else if (userChoice == PAPER) {
+    } else if (userChoice == "Paper" || userChoice == "paper") {
         console.log("The User Chose Paper");
     } else {
         console.log("The User Chose Scissors");
