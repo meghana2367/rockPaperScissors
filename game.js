@@ -4,6 +4,23 @@ const SCISSORS = 3;
 let humanScore = 0;
 let computerScore = 0;
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", () => {
+    console.log("You click rock!");
+    playRound("rock", getComputerChoice());
+});
+paper.addEventListener("click", () => {
+    console.log("You click paper!");
+    playRound("paper", getComputerChoice());
+});
+scissors.addEventListener("click", () => {
+    console.log("You click scissors!");
+    playRound("scissors", getComputerChoice());
+});
+
 function getComputerChoice() {
     let choiceNum = Math.floor((Math.random() * 3)) + 1;
     if (choiceNum == ROCK) {
@@ -15,21 +32,9 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let userChoice = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
-    while (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors" ) {
-        userChoice = prompt("That was not a valid choice. Choose 1 - Rock, 2 - Paper, or 3 - Scissors");
-    }
-    if (userChoice == ROCK) {
-        return "rock";
-    } else if (userChoice == PAPER) {
-        return "paper";
-    } else {
-        return "scissors";
-    }
-}
-
 function playRound(humanChoice, computerChoice) {
+
+
     if ((humanChoice == "rock" && computerChoice == "rock") ||
         (humanChoice == "paper" && computerChoice == "paper") ||
         (humanChoice == "scissors" && computerChoice == "scissors" )) {
@@ -59,16 +64,5 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame () {
-    for (let i = 0; i < 5; i++) {
-        let compChoice = getComputerChoice();
-        let humChoice = getHumanChoice();
-        playRound(humChoice, compChoice);
-    }
-    if (computerScore > humanScore) {
-        console.log("The computer won.")
-    } else if (computerScore < humanScore) {
-        console.log("You won.")
-    } else {
-        console.log("It's a tie!")
-    }
+    
 }
