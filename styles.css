@@ -1,24 +1,11 @@
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
 .rps {
-    margin: 0;
-    padding: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-#title {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#game {
+.game {
     display: flex;
     flex-direction: column;
+    align-self: center;
 }
